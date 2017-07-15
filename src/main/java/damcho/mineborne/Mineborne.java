@@ -1,8 +1,16 @@
 package damcho.mineborne;
 
+import damcho.mineborne.events.HungerEventHandler;
 import damcho.mineborne.init.ModBlocks;
 import damcho.mineborne.init.ModItems;
 import damcho.mineborne.proxy.CommonProxy;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
+import net.minecraft.world.World;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -28,6 +36,7 @@ public class Mineborne {
 		ModItems.register();
 		ModBlocks.init();
 		ModBlocks.register();
+		
 	}
 	
 	@EventHandler
@@ -39,6 +48,8 @@ public class Mineborne {
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
 		System.out.println("Post Init");
+		
+		MinecraftForge.EVENT_BUS.register(new HungerEventHandler());
 	}
 	
 }
