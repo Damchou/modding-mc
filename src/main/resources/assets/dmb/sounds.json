@@ -1,0 +1,29 @@
+{
+  "bonfire_sound": {
+    "category": "block",
+    "sounds": [ 
+      {
+        "name": "dmb:bonfire",
+        "stream": true
+      }
+    ]
+  },
+  "you_died_sound": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "dmb:youDied",
+        "stream": true
+      }
+    ]
+  },
+  "new_area_sound": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "dmb:newArea",
+        "stream": true
+      }
+    ]
+  }
+}

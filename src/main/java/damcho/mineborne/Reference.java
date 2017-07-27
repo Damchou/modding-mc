@@ -11,7 +11,8 @@ public class Reference {
 	public static final String SERVER_PROXY_CLASS = "damcho.mineborne.proxy.ServerProxy";
 	
 	public static enum MineborneItems {
-		ESTUS("estus", "ItemEstus");
+		ESTUS("estus", "ItemEstus"),
+		FIREBOMB("firebomb", "ItemFirebomb");
 		
 		private String unlocalizedName;
 		private String registryName;
@@ -35,7 +36,8 @@ public class Reference {
 		DARKCOBBLE("darkcobble", "DarkCobble"),
 		DARKBRICKS("darkbricks", "DarkBricks"),
 		DARKSQUARE("darksquare", "DarkSquare"),
-		DARKORNAMENT("darkornament", "DarkOrnament");
+		DARKORNAMENT("darkornament", "DarkOrnament"),
+		BLOCKBONFIRE("blockbonfire", "BlockBonfire");
 		
 		private String unlocalizedName;
 		private String registryName;

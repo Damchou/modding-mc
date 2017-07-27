@@ -1,6 +1,8 @@
 item.estus.name=Estus Flask
+item.firebomb.name=Firebomb
 
 tile.darkcobble=Dark Cobble
 tile.darkbricks=Dark Bricks
 tile.darksquare=Dark Square
 tile.darkornament=Dark Ornament
+tile.blockbonfire=Bonfire

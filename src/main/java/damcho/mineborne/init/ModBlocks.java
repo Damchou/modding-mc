@@ -1,5 +1,6 @@
 package damcho.mineborne.init;
 
+import damcho.mineborne.blocks.BlockBonfire;
 import damcho.mineborne.blocks.DarkBricks;
 import damcho.mineborne.blocks.DarkCobble;
 import damcho.mineborne.blocks.DarkOrnament;
@@ -18,12 +19,14 @@ public class ModBlocks {
 	public static Block darkbricks;
 	public static Block darksquare;
 	public static Block darkornament;
+	public static Block blockbonfire;
 	
 	public static void init() {
 		darkcobble = new DarkCobble();
 		darkbricks = new DarkBricks();
 		darksquare = new DarkSquare();
 		darkornament = new DarkOrnament();
+		blockbonfire = new BlockBonfire();
 	}
 	
 	public static void register() {
@@ -31,6 +34,7 @@ public class ModBlocks {
 		registerBlock(darkbricks);
 		registerBlock(darksquare);
 		registerBlock(darkornament);
+		registerBlock(blockbonfire);
 	}
 	
 	private static void registerBlock(Block block) {
@@ -45,6 +49,7 @@ public class ModBlocks {
 		registerRender(darkbricks);
 		registerRender(darksquare);
 		registerRender(darkornament);
+		registerRender(blockbonfire);
 	}
 	
 	private static void registerRender(Block block) {
