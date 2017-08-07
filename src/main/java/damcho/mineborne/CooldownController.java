@@ -12,6 +12,7 @@ public class CooldownController extends Item{
 		protected static int maxCooldown;
 		protected static int cooldown = 0;
 		protected static ItemStack itemstack;
+		protected static int delta_time;
 		
 		long last_time = System.nanoTime();
 
@@ -54,7 +55,7 @@ public class CooldownController extends Item{
 		public void update(ItemStack itemstack, World world, Entity entity, int metadata, boolean bool) {
 
 			long time = System.nanoTime();
-			int delta_time = (int) ((time - last_time) / 1000000);
+			delta_time = (int) ((time - last_time) / 1000000);
 			last_time = time;
 			
 			if(itemstack.getTagCompound() == null) {
@@ -69,5 +70,4 @@ public class CooldownController extends Item{
 				System.out.println(this.cooldown);
 			}
 		}
-		
 }

@@ -1,6 +1,6 @@
 {
   "bonfire_sound": {
-    "category": "block",
+    "category": "master",
     "sounds": [ 
       {
         "name": "dmb:bonfire",
@@ -12,16 +12,70 @@
     "category": "master",
     "sounds": [
       {
-        "name": "dmb:youDied",
+        "name": "dmb:youdied",
         "stream": true
       }
     ]
   },
   "new_area_sound": {
-    "category": "record",
+    "category": "master",
     "sounds": [
       {
-        "name": "dmb:newArea",
+        "name": "dmb:newarea",
+        "stream": true
+      }
+    ]
+  },
+  "death_scream01_sound": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "dmb:deathscream01",
+        "stream": true
+      }
+    ]
+  },
+  "death_scream02_sound": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "dmb:deathscream02",
+        "stream": true
+      }
+    ]
+  },
+  "death_scream03_sound": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "dmb:deathscream03",
+        "stream": true
+      }
+    ]
+  },
+  "death_scream04_sound": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "dmb:deathscream04",
+        "stream": true
+      }
+    ]
+  },
+  "death_scream05_sound": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "dmb:deathscream05",
+        "stream": true
+      }
+    ]
+  },
+  "death_scream06_sound": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "dmb:deathscream06",
         "stream": true
       }
     ]

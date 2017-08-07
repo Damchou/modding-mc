@@ -1,11 +1,18 @@
 package damcho.mineborne.tileentity;
 
+import java.util.ArrayList;
+
+import org.lwjgl.opengl.GL11;
+
 import damcho.mineborne.Reference;
+import damcho.mineborne.gui.RenderHandler;
 import damcho.mineborne.handlers.CustomSoundHandler;
 import damcho.mineborne.init.ModItems;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
@@ -20,8 +27,10 @@ public class TileEntityBonfire extends TileEntity implements ITickable{
 	public void setSpawn(World world, EntityPlayer player, BlockPos pos) {
 		this.cooldown = 20 * 8;
 		player.setSpawnPoint(player.getPosition(), true);
-		System.out.println("Spawn set for " + player + ".");
-		world.playSound(null, pos, CustomSoundHandler.BONFIRE_SOUND, SoundCategory.BLOCKS, 0.9f, 0.8f);
+		System.out.println("Spawn set for " + player + ". " + world);
+		//RenderHandler.setDiscoveryText("Bonfire-desu");
+		world.playSound(null, pos, CustomSoundHandler.BONFIRE_SOUND, SoundCategory.MASTER, 0.9f, 1.0f);
+		
 	}
 	
 	public void giveEstus(EntityPlayer player) {
@@ -33,6 +42,7 @@ public class TileEntityBonfire extends TileEntity implements ITickable{
 				estusCount += stack.getCount();
 			}
 		}
+				
 		player.inventory.addItemStackToInventory(new ItemStack(ModItems.estus, (estusMax - estusCount)));
 	}
 	
@@ -70,6 +80,8 @@ public class TileEntityBonfire extends TileEntity implements ITickable{
 		return cooldown;
 	}
 	
-	
+	public boolean canRenderBreaking() {
+		return false;
+	}
 	
 }

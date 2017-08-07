@@ -21,6 +21,24 @@ public class CustomSoundHandler {
 
 	@ObjectHolder("new_area_sound")
 	public static final SoundEvent NEW_AREA_SOUND = createSoundEvent("new_area_sound");
+	
+	@ObjectHolder("death_scream01_sound")
+	public static final SoundEvent DEATH_SCREAM01_SOUND = createSoundEvent("death_scream01_sound");
+	
+	@ObjectHolder("death_scream02_sound")
+	public static final SoundEvent DEATH_SCREAM02_SOUND = createSoundEvent("death_scream02_sound");
+	
+	@ObjectHolder("death_scream03_sound")
+	public static final SoundEvent DEATH_SCREAM03_SOUND = createSoundEvent("death_scream03_sound");
+	
+	@ObjectHolder("death_scream04_sound")
+	public static final SoundEvent DEATH_SCREAM04_SOUND = createSoundEvent("death_scream04_sound");
+	
+	@ObjectHolder("death_scream05_sound")
+	public static final SoundEvent DEATH_SCREAM05_SOUND = createSoundEvent("death_scream05_sound");
+	
+	@ObjectHolder("death_scream06_sound")
+	public static final SoundEvent DEATH_SCREAM06_SOUND = createSoundEvent("death_scream06_sound");
 
 	/**
 	 * Create a {@link SoundEvent}.
@@ -40,7 +58,13 @@ public class CustomSoundHandler {
 			event.getRegistry().registerAll(
 					BONFIRE_SOUND,
 					YOU_DIED_SOUND,
-					NEW_AREA_SOUND
+					NEW_AREA_SOUND,
+					DEATH_SCREAM01_SOUND,
+					DEATH_SCREAM02_SOUND,
+					DEATH_SCREAM03_SOUND,
+					DEATH_SCREAM04_SOUND,
+					DEATH_SCREAM05_SOUND,
+					DEATH_SCREAM06_SOUND
 			);
 		}
 }

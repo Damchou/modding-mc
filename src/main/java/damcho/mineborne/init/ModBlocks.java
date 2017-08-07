@@ -1,5 +1,7 @@
 package damcho.mineborne.init;
 
+import damcho.mineborne.blocks.AreaPlate;
+import damcho.mineborne.blocks.AreaPlateFurnace;
 import damcho.mineborne.blocks.BlockBonfire;
 import damcho.mineborne.blocks.DarkBricks;
 import damcho.mineborne.blocks.DarkCobble;
@@ -7,6 +9,7 @@ import damcho.mineborne.blocks.DarkOrnament;
 import damcho.mineborne.blocks.DarkSquare;
 import damcho.mineborne.items.ItemEstus;
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -20,6 +23,8 @@ public class ModBlocks {
 	public static Block darksquare;
 	public static Block darkornament;
 	public static Block blockbonfire;
+	public static Block areaplate;
+	public static Block areaplate_furnace;
 	
 	public static void init() {
 		darkcobble = new DarkCobble();
@@ -27,6 +32,8 @@ public class ModBlocks {
 		darksquare = new DarkSquare();
 		darkornament = new DarkOrnament();
 		blockbonfire = new BlockBonfire();
+		areaplate = new AreaPlate();
+		areaplate_furnace = new AreaPlateFurnace();
 	}
 	
 	public static void register() {
@@ -35,6 +42,8 @@ public class ModBlocks {
 		registerBlock(darksquare);
 		registerBlock(darkornament);
 		registerBlock(blockbonfire);
+		registerBlock(areaplate);
+		registerBlock(areaplate_furnace);
 	}
 	
 	private static void registerBlock(Block block) {
@@ -50,6 +59,8 @@ public class ModBlocks {
 		registerRender(darksquare);
 		registerRender(darkornament);
 		registerRender(blockbonfire);
+		registerRender(areaplate);
+		registerRender(areaplate_furnace);
 	}
 	
 	private static void registerRender(Block block) {

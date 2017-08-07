@@ -1,9 +1,12 @@
 package damcho.mineborne;
 
 import damcho.mineborne.entity.EntityFirebomb;
+import damcho.mineborne.gui.RenderHandler;
+import damcho.mineborne.handlers.ConfigHandler;
 import damcho.mineborne.handlers.CustomSoundHandler;
 import damcho.mineborne.handlers.DeathHandler;
 import damcho.mineborne.handlers.HungerEventHandler;
+import damcho.mineborne.handlers.ModGuiHandler;
 import damcho.mineborne.init.ModBlocks;
 import damcho.mineborne.init.ModItems;
 import damcho.mineborne.proxy.CommonProxy;
@@ -16,8 +19,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -25,6 +30,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartedEvent;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -42,6 +48,8 @@ public class Mineborne {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		System.out.println("Pre Init");
+		
+		ConfigHandler.init();
 		
 		proxy.preInit();
 		
@@ -61,6 +69,8 @@ public class Mineborne {
 		GameRegistry.registerTileEntity(TileEntityBonfire.class, Reference.MOD_ID + "TileEntityBonfire");
 		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID + "Firebomb"), EntityFirebomb.class, "Firebomb", 0, this, 64, 10, true);
 		
+		MinecraftForge.EVENT_BUS.register(RenderHandler.instance);
+		MinecraftForge.EVENT_BUS.register(new ModGuiHandler());
 		
 	}
 	
@@ -70,6 +80,15 @@ public class Mineborne {
 		
 		MinecraftForge.EVENT_BUS.register(new HungerEventHandler());
 		MinecraftForge.EVENT_BUS.register(new DeathHandler());
+	}
+	
+	
+	@EventHandler
+	public void serverStarted(FMLServerStartedEvent event) {
+		GameRules gr = FMLCommonHandler.instance().getMinecraftServerInstance().worlds[0].getGameRules();
+		
+		if(gr.getBoolean("keepInventory") != ConfigHandler.keepInventory)
+			gr.setOrCreateGameRule("keepInventory", Boolean.toString(ConfigHandler.keepInventory));
 	}
 	
 }

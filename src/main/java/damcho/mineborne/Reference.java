@@ -37,7 +37,9 @@ public class Reference {
 		DARKBRICKS("darkbricks", "DarkBricks"),
 		DARKSQUARE("darksquare", "DarkSquare"),
 		DARKORNAMENT("darkornament", "DarkOrnament"),
-		BLOCKBONFIRE("blockbonfire", "BlockBonfire");
+		BLOCKBONFIRE("blockbonfire", "BlockBonfire"),
+		AREAPLATE("areaplate", "AreaPlate"),
+		AREAPLATE_FURNACE("areaplate_furnace", "AreaPlate_Furnace");
 		
 		private String unlocalizedName;
 		private String registryName;

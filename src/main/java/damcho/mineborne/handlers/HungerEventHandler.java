@@ -1,5 +1,6 @@
 package damcho.mineborne.handlers;
 
+import damcho.mineborne.blocks.AreaPlate;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.potion.Potion;
@@ -9,20 +10,12 @@ import net.minecraftforge.client.event.EntityViewRenderEvent.FogDensity;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingJumpEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class HungerEventHandler {
-	
-	@SubscribeEvent(priority=EventPriority.HIGHEST, receiveCanceled=true)
-	
-	public void onEvent(LivingJumpEvent event) {
-		
-		// debug
-		if (event.getEntity() instanceof EntityPlayer) 
-			System.out.println("halooo");
-	}
 	
 	/*
 	@SubscribeEvent(priority=EventPriority.NORMAL, receiveCanceled=true)
